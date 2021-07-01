@@ -4,6 +4,7 @@ import base64
 
 hide_streamlit_style = """
             <style>
+            .* {margin: 0px;}
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             </style>
@@ -24,10 +25,12 @@ def set_png_as_page_bg(png_file):
   background-image: url("data:image/png;base64,%s");
   background-position: center;
   background-repeat: no-repeat;
-  background-color: black;
-  width: 650px;
+  background-color: white;
+  width: 410px;
+  height: 620px;
   padding-top: 0rem;
   padding-left: 10rem;
+  margin-top: 0px;
 }
     </style>
     ''' % bin_str
@@ -35,7 +38,7 @@ def set_png_as_page_bg(png_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
     return
 
-set_png_as_page_bg('main2.gif')
+set_png_as_page_bg('main4.gif')
 
 components.html('''<html>
     <body>
@@ -45,9 +48,9 @@ components.html('''<html>
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%) }
-            .rw-conversation-container .rw-messages-container {background-color: rgb(0,0,0); }
-            .rw-conversation-container .rw-header {background-color: rgb(0, 0, 0);box-shadow: 5px 5px 10px grey;}
-            .rw-conversation-container .rw-messages-container .rw-message .rw-response {background-color: rgba(73, 255, 134, 0.719);color: white;}
+            .rw-conversation-container .rw-messages-container {background-color: rgb(255,255,255,); }
+            .rw-conversation-container .rw-header {background-color: blue;box-shadow: 5px 5px 10px grey;}
+            .rw-conversation-container .rw-messages-container .rw-message .rw-response {background-color: rgba(73, 255, 134, 0.719);color: black;}
         </style>
         <script>!(function () {
             let e = document.createElement("script"),
@@ -75,4 +78,4 @@ components.html('''<html>
           </script>
           
     </body>
-</html>''',height=550)
+</html>''',height=500)
